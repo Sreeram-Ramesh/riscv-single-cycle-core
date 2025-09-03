@@ -115,6 +115,9 @@ initial begin
     reset = 1;
     Ext_MemWrite = 0; Ext_DataAdr = 32'b0; Ext_WriteData = 32'b0; #10;
     reset = 0;
+    #20000000;
+    $display("Simulation Timed Out!");
+    $finish;
 end
 
 always @(posedge clk) begin
